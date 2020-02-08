@@ -30,6 +30,10 @@ class BlogViewSet(viewsets.ModelViewSet):
         data = BlogSerializer(blogs, many=True).data
         return response.Response({'data': data, 'user': request.user.username,  'id': request.user.id})
 
+    # def update(self, request):
+    #     print(request)
+    #     return  response.Response({'msg': 'testing'})
+
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = User.objects.all()
